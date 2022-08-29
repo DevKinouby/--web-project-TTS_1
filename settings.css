@@ -1,0 +1,49 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  cursor: default;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'InterExtraBold';
+  src: url(font/Inter/Inter-ExtraBold.otf);
+}
+
+@font-face {
+font-family: 'InterBold';
+src: url(font/Inter/Inter-Bold.otf);
+}
+
+@font-face {
+font-family: 'InterRegular';
+src: url(font/Inter/Inter-Regular.otf);
+}
+
+:root{
+    /* Colors */
+  --main-color: rgb(40, 65, 150);
+  --accentuation-color: rgb(255, 90, 0);
+
+  --header-color: rgb(255, 255, 255, 1);
+  --footer-color: rgb(40, 40, 40, 1);
+
+  /* Font Colors */
+  --font_black-color: rgb(10, 10, 10, 1);
+  --font_white-color: rgb(255, 255, 255, 1);
+
+  /* Font-size */
+  --small-fontsize: clamp(.6rem, 1vw, .8rem);
+  --medium-fontsize: clamp(.75rem, .8vw, .9rem);
+  --large-fontsize: clamp(1rem , 1.2vw, 1.3rem);
+}
+
+.page-viewer{display: none;}

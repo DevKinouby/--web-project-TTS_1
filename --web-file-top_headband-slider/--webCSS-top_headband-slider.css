@@ -1,0 +1,184 @@
+#top_headband-slider{
+    width: 100%;
+    height: 450px;
+    padding-inline: calc(10px + 3vw);
+    padding-block: calc(10px + 3vw);
+    overflow: hidden;
+}
+
+#top_headband-slider>div{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(250deg, #183bad, #c54e09);
+    background-size: 400% 400%;
+    animation: background_gradient-moving 10s ease infinite;
+}
+
+.top_headband-slider-arrow{
+    z-index: 2;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(20,20,20,.5);
+    cursor: pointer;
+}
+
+.top_headband-slider-arrow>img{
+    width: 50%;
+    height: 50%;
+}
+
+.top_headband-slider-arrow-left{
+    left: 0;
+}
+
+.top_headband-slider-arrow-right{
+    right: 0;
+}
+
+.top_headband-slider-widget{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* -- Widgets -- */
+
+.top_headband-slider-widget-1,
+.top_headband-slider-widget-2,
+.top_headband-slider-widget-3,
+.top_headband-slider-widget-4{
+    display: none;
+}
+
+.top_headband-slider-widget-visible.top_headband-slider-widget-1,
+.top_headband-slider-widget-visible.top_headband-slider-widget-2,
+.top_headband-slider-widget-visible.top_headband-slider-widget-3,
+.top_headband-slider-widget-visible.top_headband-slider-widget-4{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: ths_background-SizeUp 4s forwards ease-in-out;
+}
+
+/* -- Widgets Span -- */
+
+.top_headband-slider-widget>span{
+    font-family: 'InterBold';
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--font_white-color);
+}
+
+.top_headband-slider-widget>span:nth-child(1){
+    font-size: clamp(1.5rem, 7vw, 6rem);
+}
+
+.top_headband-slider-widget>span:nth-child(2){
+    font-size: clamp(.5rem, 2vw, 1rem);
+    letter-spacing: 2px;
+}
+
+/* -- Circles -- */
+
+.top_headband-slider_marker-container{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.top_headband-slider_marker-container>svg{
+    position: relative;
+    width: 100%;
+    height: 15px;
+    display: flex;
+}
+
+.top_headband-slider_marker-container>svg>circle{
+    position: absolute;
+    transform: translateX(40%) translateY(15%);
+    fill: none;
+    stroke-width: 3px;
+    stroke-linecap: round;
+}
+
+.top_headband-slider-under_circle{
+    stroke: rgba(230, 230, 230, .5);
+}
+
+.top_headband-slider-top_circle{
+    stroke-dasharray: 240;
+    stroke-dashoffset: 240;
+    stroke: rgb(255, 255, 255, 1);
+
+}
+
+.top_headband-slider-widget_circle-load.top_headband-slider-top_circle{
+    animation: ths-load_circle 4s infinite;
+}
+
+/*! [ Media queries settings ] ----------------------------------------------------------------------------------------------- */
+
+@media screen and (max-width: 425px) {
+
+    .top_headband-slider-widget-visible.top_headband-slider-widget-1,
+    .top_headband-slider-widget-visible.top_headband-slider-widget-2,
+    .top_headband-slider-widget-visible.top_headband-slider-widget-3,
+    .top_headband-slider-widget-visible.top_headband-slider-widget-4{
+        justify-content: start;
+        padding-top: 75px;
+    }
+
+}
+
+/*! [ Animations settings ] ----------------------------------------------------------------------------------------------- */
+
+@keyframes ths_background-SizeUp {
+    from{
+        background-size: 100%;
+        opacity: 0;
+    }
+    5%{
+        opacity: 100%;
+    }
+    95%{
+        opacity: 100%;
+    }
+    to{
+        background-size: calc(100% + 500px);
+        opacity: 0;
+    }
+}
+
+@keyframes ths-load_circle {
+    from{
+        stroke-dasharray: 240;
+    }
+    to{
+        stroke-dasharray: 270;
+    }
+}
+
+@keyframes background_gradient-moving {
+    0%{background-position:50% 50%;}
+    25%{background-position:85% 15%;}
+    75%{background-position: 15% 85%;}
+    100%{background-position:50% 50%;}
+}

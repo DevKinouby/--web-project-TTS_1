@@ -1,0 +1,127 @@
+/*! Footer Top ------------------- */
+
+footer{
+    width: 100%;
+    height: auto;
+    background-color: var(--footer-color);
+}
+
+#footer-top{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.footer-widget{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-widget-title{
+    font-size: clamp(1rem , 1.2vw, 1.3rem);
+    margin-bottom: 15px;
+    font-family: 'InterBold';
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgb(100,100,100,1);    
+}
+
+.footer-widget-text{
+    font-size: clamp(.75rem, .8vw, .9rem);
+    font-family: 'InterRegular';
+    letter-spacing: 5px;
+    line-height: 20px;
+    color: var(--font_white-color);
+}
+
+.footer-widget-text>a{
+    text-decoration: none;
+    color: var(--font_white-color);
+    transition: .5s;
+}
+
+.footer-widget-text>a:hover{
+    color: var(--accentuation-color);
+}
+
+.footer-widget-inner_text-numero{
+    letter-spacing: 2px;
+}
+
+/*! Footer Bottom ------------------- */
+
+#footer-bottom{
+    width: 100%;
+    height: 50px;
+    background: rgb(30,30,30,1);
+    padding-inline: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#footer-copyright{
+    font-family: 'InterRegular';
+    font-size: clamp(.6rem, 1vw, .8rem);
+    color: var(--font_white-color);
+}
+
+/*! [ Media queries Header settings ] ----------------------------------------------------------------------------------------------- */
+
+/* [ Phone ] ----------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 0px) {
+
+    #footer-top{
+        padding-inline: 30px;
+        padding-block: 30px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .footer-widget{
+        padding: 10px;
+    }
+
+}
+
+/* [ Tablette ] ----------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 635px) {
+    
+    #footer-top{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .footer-widget{
+        padding: 20px;
+    }
+
+}
+
+/* [ Laptop / PC ] ----------------------------------------------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+
+    #footer-top{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
+    }
+
+    .footer-widget{
+        padding: 30px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+
+    .footer-widget-text{
+        line-height: 25px;
+    }
+
+}

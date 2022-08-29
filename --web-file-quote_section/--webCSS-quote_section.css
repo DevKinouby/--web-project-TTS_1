@@ -1,0 +1,186 @@
+/*! quote-section_block [ comment_container ] */
+
+#quote_section{
+    width: 100%;
+    height: clamp(500px, 80vw, 700px);
+    padding-inline: calc(10px + 3vw);
+    padding-top: calc(10px + 3vw);          /*! */
+    overflow: hidden;
+}
+
+#quote_section>div{
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background-image: linear-gradient(0deg, rgba(255, 92, 0, 0.5), rgba(255, 92, 0, 0.5)), url(../../Minimalism/pexels-elīna-arāja-3334452.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#quote_section-comment_container{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    padding-block: calc(25px + 2vw);
+}
+
+.quote_section-comment_image{
+    width: clamp(50px, 9vw, 65px);
+    height: clamp(50px, 9vw, 65px);
+    border-radius: 100%;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, .5) ;
+}
+
+.quote_section-comment_text{
+    font-family: 'InterBold';
+    font-size: clamp(.8rem, 3vw, 1.5rem);
+    letter-spacing: 2px;
+    line-height: normal;
+    text-align: center;
+    color: var(--font_white-color);
+    margin-block: calc(5px + 2.5vw);
+}
+
+.quote_section-comment_name{
+    font-family: 'InterBold';
+    font-size: clamp(.4rem, 2vw, .9rem);
+    letter-spacing: 2px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: var(--font_white-color);
+}
+
+/*! quote-section_block [ comment_marker ] */
+
+#quote_section-comment_marker{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: clamp(75px, 15vw, 200px);
+}
+
+/* Arrow */
+
+.quote_section-arrow{
+    width: 125px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.quote_section-arrow-left{
+    margin-right: 20px;
+}
+
+.quote_section-arrow-right{
+    margin-left: 20px;
+}
+
+/* SVG */
+
+.quote_section-comment_marker-container{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(195px, 30vw, 250px);
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.quote_section-comment_marker-container>svg{
+    position: relative;
+    width: 100%;
+    height: 15px;
+    display: flex;
+}
+
+.quote_section-comment_marker-container>svg>circle{
+    position: absolute;
+    transform: translateX(40%) translateY(20%);
+    stroke-width: 3px;
+    stroke-linecap: round;
+}
+
+.quote_section-under_circle{
+    stroke: rgb(255, 255, 255, 1);
+    fill: none;
+}
+
+.quote_section-top_circle{
+    fill: none;
+}
+
+.quote_section-comment_circle-visible.quote_section-top_circle{
+    fill: rgb(255, 255, 255, 1);
+    animation: qsb_comment_circle-opacity .2s forwards;
+}
+
+/*! Showing Comment and Circle */
+
+.quote_section-comment{
+    width: 75%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote_section-comment_1,
+.quote_section-comment_2,
+.quote_section-comment_3,
+.quote_section-comment_4{
+    display: none;
+}
+
+.quote_section-comment-visible.quote_section-comment_1,
+.quote_section-comment-visible.quote_section-comment_2,
+.quote_section-comment-visible.quote_section-comment_3,
+.quote_section-comment-visible.quote_section-comment_4{
+    display: flex;
+    animation: qsb_comment-opacity 1s forwards;
+}
+
+@keyframes qsb_comment-opacity {
+    from{
+        opacity: 0;
+    }
+    15%{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@keyframes qsb_comment_circle-opacity {
+    from{
+        opacity: 0;
+    }
+    15%{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+/**/
+
+.scoll_onClientScreenAnimation#quote_section-comment_container{
+    animation: qsb_comment-opacity 1s forwards;
+}

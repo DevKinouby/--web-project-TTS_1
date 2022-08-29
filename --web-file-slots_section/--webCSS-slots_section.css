@@ -1,0 +1,101 @@
+#slots_section{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    overflow: hidden;
+}
+
+#slots_section>a{
+    text-decoration: none;
+}
+
+/* Widget && Filter */
+
+.slots_section-widget{
+    position: relative;
+    width: 100%;
+    height: clamp(110px, 25vw, 410px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.slots_section-widget_1{
+    background-image: url(--web-slots_section-slot_1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slots_section-widget_2{
+    background-image: url(--web-slots_section-slot_2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slots_section-widget_3{
+    background-image: url(--web-slots_section-slot_3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slots_section-widget_4{
+    background-image: url(--web-slots_section-slot_4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* filter */
+
+.slots_section-filter{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    opacity: .5;
+    transition: .7s;
+}
+
+.slots_section-filter:hover{
+    opacity: .25;
+}
+
+/* Widget texts [ span ] */
+
+.slots_section-widget_title{
+    z-index: 2;
+    font-family: 'InterBold';
+    font-size: clamp(1.2rem, 4vw, 4.5rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--font_white-color);
+    margin: 5px;
+}
+
+.slots_section-widget_sub-title{
+    z-index: 2;
+    font-family: 'InterBold';
+    font-size: clamp(.5rem, .9vw, 1rem);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--font_white-color);
+    margin: 5px;
+}
+
+/*! */
+
+@media screen and (max-width: 650px) {
+
+    #slots_section{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+}
